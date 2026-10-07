@@ -158,7 +158,7 @@ If the project depends on external APIs, SDKs, or platform rules, prefer local r
 
 Do not rely on memory when official docs or local references exist.
 
-If local external documentation exists, mention it in `.context/global.md` or the relevant domain file.
+If local external documentation exists, mention it in `.context/GLOBAL.md` or the relevant domain file.
 
 ---
 

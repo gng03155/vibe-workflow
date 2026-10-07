@@ -20,9 +20,17 @@ Do not use `.context/` as a task log, scratchpad, or code dump.
   GLOSSARY.md
   TECH_DEBT.md
   domains/
-    trading-calculators.md
-    toss-webview.md
+    _template.md
 ```
+
+---
+
+## Applying This Template
+
+* Verify project facts against code and local documentation before replacing `Needs verification`.
+* Create domain files only for the target project's actual domains, using `domains/_template.md` as a starting point. The template itself is not domain context.
+* Keep the structure above aligned with existing files. `<domain>` below is a placeholder; replace it with an existing domain name when adapting the routing examples.
+* Match filename case exactly in references: core context files use uppercase names; domain files use lowercase kebab-case.
 
 ---
 
@@ -55,17 +63,17 @@ Domain-specific business rules and constraints
 Examples:
 
 ```text
-Electron shell, storage, commands
+Shared architecture or storage decision
 → GLOBAL.md + DECISIONS.md
 
-Toss webview, session, navigation
-→ GLOBAL.md + domains/toss-webview.md
+Domain flow, business rule, or validation
+→ GLOBAL.md + domains/<domain>.md
 
 UI/copy change
 → GLOBAL.md + DESIGN.md
 
-Calculator behavior or validation
-→ GLOBAL.md + domains/trading-calculators.md
+Known technical limitation in an affected area
+→ TECH_DEBT.md + domains/<domain>.md
 
 Unclear project term
 → GLOSSARY.md
@@ -306,7 +314,7 @@ Create a new file under `domains/` when a domain has durable rules likely to mat
 
 Use lowercase kebab-case names.
 
-Examples:
+Illustrative filenames (create only those relevant to the project):
 
 ```text
 domains/billing.md
@@ -314,7 +322,7 @@ domains/notification.md
 domains/workspace.md
 ```
 
-After adding a domain file, update this README.
+After adding, renaming, or removing a domain file, update this README's structure and any affected routing references to match existing files.
 
 ---
 
