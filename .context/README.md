@@ -18,6 +18,7 @@ Do not use `.context/` as a task log, scratchpad, or code dump.
   DESIGN.md
   DECISIONS.md
   GLOSSARY.md
+  TECH_DEBT.md
   domains/
     trading-calculators.md
     toss-webview.md
@@ -43,6 +44,9 @@ Important decisions and rationale
 
 Project-specific terms
 → GLOSSARY.md
+
+Known technical debt affecting the task
+→ TECH_DEBT.md
 
 Domain-specific business rules and constraints
 → domains/<domain>.md
@@ -179,6 +183,31 @@ Do not include:
 
 ---
 
+### `TECH_DEBT.md`
+
+Use for unresolved technical debt that future work must account for.
+
+* Record verified limitations, fragile workarounds, or deferred fixes with concrete impact beyond the current task.
+* Keep each item short: problem and impact, relevant paths, reason deferred, and resolution direction or trigger.
+* Read when the task touches an affected area; do not load it for every task.
+* At the end of non-trivial work, add or update relevant items and remove resolved items after verification.
+* Exclude speculative improvements, ordinary task TODOs, progress logs, and resolved history.
+* Reference durable rules or decision rationale in other context files instead of duplicating them here. Preserve still-relevant knowledge there when removing a resolved item.
+* Mark unverified details as `Needs verification`.
+
+Recommended format:
+
+```md
+## Short debt title
+
+- Problem / impact: ...
+- Relevant paths: ...
+- Reason deferred: ...
+- Resolution / trigger: ...
+```
+
+---
+
 ### `domains/*.md`
 
 Use for domain-specific context.
@@ -236,6 +265,7 @@ Update when work adds, changes, or reveals:
 * Project-specific term
 * Repeated failure case
 * Non-obvious gotcha
+* Unresolved technical debt affecting future work, or resolution of a recorded item
 
 Do not update for:
 

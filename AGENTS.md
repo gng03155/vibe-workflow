@@ -1,10 +1,6 @@
 # AGENTS.md
 
-## Purpose
-
 AI handoff guide for this project.
-
----
 
 ## Core Rule
 
@@ -28,6 +24,7 @@ Document only durable information that helps future agents avoid wrong assumptio
   DESIGN.md
   DECISIONS.md
   GLOSSARY.md
+  TECH_DEBT.md
   domains/
 ```
 
@@ -35,11 +32,7 @@ Document only durable information that helps future agents avoid wrong assumptio
 
 ## Reading Order
 
-Start with:
-
-```text
-.context/README.md
-```
+Start with `.context/README.md`.
 
 Then route by task type:
 
@@ -55,6 +48,9 @@ Important decisions and rationale
 
 Project-specific terms
 → .context/GLOSSARY.md
+
+Known technical debt affecting the task
+→ .context/TECH_DEBT.md
 
 Domain-specific business rules and constraints
 → .context/domains/<domain>.md
@@ -74,6 +70,7 @@ Good context:
 * Business, product, design, or domain rules
 * Permission, security, API, SDK, or platform constraints
 * Important trade-offs, gotchas, failed approaches, or decisions
+* Unresolved technical debt that affects future work
 * Project-specific terminology
 
 Bad context:
@@ -112,6 +109,8 @@ Keep context compact.
 At the end of every non-trivial task, check whether `.context/` should be updated, even if the user did not ask.
 
 Update `.context/` only when the task changes durable project knowledge.
+
+Check for technical debt introduced, discovered, or resolved during the task. Maintain `.context/TECH_DEBT.md` using the criteria in `.context/README.md`.
 
 Update when work adds, changes, or reveals:
 
@@ -165,8 +164,6 @@ If local external documentation exists, mention it in `.context/global.md` or th
 
 ## Agent Behavior
 
-For non-trivial work, read `.context/README.md`, then only relevant context files.
-
 Verify important behavior against code, and treat context as stale when it conflicts with code.
 
 End with the required context maintenance note.
@@ -177,10 +174,6 @@ End with the required context maintenance note.
 
 AGENTS.md should stay short.
 
-Detailed context-file responsibilities, templates, and examples belong in:
-
-```text
-.context/README.md
-```
+Detailed context-file responsibilities, templates, and examples belong in `.context/README.md`.
 
 If a rule becomes too detailed for AGENTS.md, move it there.
