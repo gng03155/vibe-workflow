@@ -13,7 +13,7 @@ AI handoff guide for this project.
 
 * Work from existing project context.
 * For non-trivial work, read `.context/README.md` first and follow its reading map and conditional writing routes.
-* Use the canonical terms in `.context/GLOSSARY.md`; consult relevant entries when a term is unclear or new.
+* Look up only the relevant entries in `.context/GLOSSARY.md` when a project term is unfamiliar or you are introducing a new term; reuse an existing canonical term when available.
 * Keep this entry point under 180 lines when practical.
 
 ## Verify Before Changing Knowledge

@@ -6,5 +6,5 @@
 
 ### Watchlist
 
-Definition: A user-maintained set of instruments displayed together.
-Notes: Use this term instead of saved symbol list.
+Definition: A collection of instruments tracked as a group.
+Notes: Synonym: symbol list.

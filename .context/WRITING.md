@@ -19,7 +19,8 @@ These terms describe this documentation contract; put project-specific terminolo
 ## Knowledge
 
 * Apply the [AGENTS.md core contract](../AGENTS.md#core-contract). Assign each rule one owner; link that owner from other files.
-* Define a new project-specific concept in [GLOSSARY.md](GLOSSARY.md) before introducing its term. Reuse that canonical term for the same concept.
+* Define a new project-specific concept in [GLOSSARY.md](GLOSSARY.md) before introducing its term.
+* Keep GLOSSARY entries to concept meanings and terminology distinctions. Put policies and behavior rules in their context owner; link that owner when needed.
 * Record agreed intent separately from verified implementation. Label unverified facts `Needs verification`; keep unagreed proposals in a task draft or the conversation.
 * Put agreed durable rules in their owner before implementation when known. Add verified constraints discovered during implementation when they become known.
 * Correct or label references that conflict with a current project rule; reverify external facts against official evidence.

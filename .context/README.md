@@ -11,7 +11,7 @@
 | Shared design rules | [DESIGN.md](DESIGN.md) |
 | Domain rules | `.context/domains/<domain>.md`; exact registered paths below |
 | Decision rationale or replacement | [DECISIONS.md](DECISIONS.md); follow its Owner links |
-| Project terminology | [GLOSSARY.md](GLOSSARY.md); relevant terms only |
+| Unfamiliar or new project term | [GLOSSARY.md](GLOSSARY.md); relevant entries only |
 | Limitation affecting this task | [TECH_DEBT.md](TECH_DEBT.md); relevant items only |
 | Supporting evidence or assets | Reference Map below, or [GLOBAL References](GLOBAL.md#references) |
 | Task scope, completion criteria, results | `docs/tasks/YYYY-MM-DD-<slug>.md`, when required |
