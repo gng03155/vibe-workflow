@@ -23,34 +23,40 @@ rounded:
 components: {}
 ---
 
+Owns: Shared visual language, design tokens, reusable UI patterns, copy, and accessibility conventions.
+
 ## Overview
 
-Describe the product's visual personality, target audience, density, emotional tone, and the feeling the UI should evoke.
+Needs verification
 
 ## Colors
 
-Explain palette roles and usage: primary actions, secondary UI, backgrounds, borders, warnings, destructive actions, and disabled states.
+Needs verification
 
 ## Typography
 
-Describe heading, body, label, caption, and data typography roles. Include when each style should be used.
+Needs verification
 
 ## Layout
 
-Describe spacing scale, grid behavior, page density, max widths, gutters, and responsive layout rules.
+Needs verification
 
 ## Elevation & Depth
 
-Describe how visual hierarchy is created: shadows, borders, tonal layers, overlays, or flat alternatives.
+Needs verification
 
 ## Shapes
 
-Describe radius, corners, container shapes, icon style, and any shape rules for interactive elements.
+Needs verification
 
 ## Components
 
-Define reusable component styling rules for buttons, inputs, cards, lists, dialogs, chips, tooltips, and states.
+Needs verification
+
+## Copy And Accessibility
+
+Needs verification
 
 ## Do's and Don'ts
 
-List practical guardrails agents should follow or avoid when creating new UI.
+Needs verification

@@ -1,5 +1,7 @@
 # Technical Debt
 
-Current unresolved debt that affects future work. See `README.md` for recording criteria and format.
+Update records using [WRITING.md](WRITING.md#technical-debt).
 
-No technical debt recorded yet.
+## Items
+
+None.

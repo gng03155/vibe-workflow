@@ -1,7 +1,7 @@
 # Glossary
 
-Record only project-specific terms.
+Canonical project-specific terms. Add entries using [WRITING.md](WRITING.md#knowledge).
 
 ## Terms
 
-Needs verification.
+None.

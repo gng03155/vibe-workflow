@@ -1,11 +1,11 @@
 # Decisions
 
-Record only decisions future agents should not accidentally reverse.
+Update records using [WRITING.md](WRITING.md#decisions).
 
 ## Active Decisions
 
-Needs verification.
+None.
 
-## Deprecated Or Replaced Decisions
+## Retired Decisions
 
-Needs verification.
+None.

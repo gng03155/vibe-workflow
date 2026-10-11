@@ -1,343 +1,50 @@
 # Context README
 
-This file explains how to read and maintain `.context/`.
-
-`.context/` is the compressed source of current project knowledge.
-It exists to help future AI agents and developers understand the project quickly without reading the entire codebase first.
-
-Do not use `.context/` as a task log, scratchpad, or code dump.
-
----
-
-## Structure
-
-```text
-.context/
-  README.md
-  GLOBAL.md
-  DESIGN.md
-  DECISIONS.md
-  GLOSSARY.md
-  TECH_DEBT.md
-  domains/
-    _template.md
-```
-
----
-
-## Applying This Template
-
-* Verify project facts against code and local documentation before replacing `Needs verification`.
-* Create domain files only for the target project's actual domains, using `domains/_template.md` as a starting point. The template itself is not domain context.
-* Keep the structure above aligned with existing files. `<domain>` below is a placeholder; replace it with an existing domain name when adapting the routing examples.
-* Match filename case exactly in references: core context files use uppercase names; domain files use lowercase kebab-case.
-
----
-
-## Read Order
-
-Start here when project context is needed.
-
-Read only the files relevant to the task.
-
-```text
-Project-wide rules, stack, conventions
-→ GLOBAL.md
-
-UI, UX, copy, accessibility, reusable design rules
-→ DESIGN.md
-
-Important decisions and rationale
-→ DECISIONS.md
-
-Project-specific terms
-→ GLOSSARY.md
-
-Known technical debt affecting the task
-→ TECH_DEBT.md
-
-Domain-specific business rules and constraints
-→ domains/<domain>.md
-```
-
-Examples:
-
-```text
-Shared architecture or storage decision
-→ GLOBAL.md + DECISIONS.md
-
-Domain flow, business rule, or validation
-→ GLOBAL.md + domains/<domain>.md
-
-UI/copy change
-→ GLOBAL.md + DESIGN.md
-
-Known technical limitation in an affected area
-→ TECH_DEBT.md + domains/<domain>.md
-
-Unclear project term
-→ GLOSSARY.md
-```
-
----
-
-## File Responsibilities
-
-### `GLOBAL.md`
-
-Use for project-wide context.
-
-Include:
-
-* Tech stack
-* Coding conventions
-* Testing conventions
-* Shared constraints
-* Cross-domain rules
-* Common implementation principles
-
-Do not include:
-
-* Domain-specific business logic
-* UI/UX rules
-* Temporary task notes
-
----
-
-### `DESIGN.md`
-
-Use for durable design-system context.
-
-Follow the DESIGN.md format when practical:
-YAML front matter for machine-readable design tokens, followed by Markdown sections for design rationale and usage guidance.
-
-Source of truth:
-- https://github.com/google-labs-code/design.md/blob/main/docs/spec.md
-
-Start from the checked-in `.context/DESIGN.md` template.
-Replace `Needs verification` only with verified design values.
-If token values are incomplete or uncertain, the file may not pass lint yet.
-
-When token values are defined, validate when possible:
-
-```text
-npx @google/design.md lint .context/DESIGN.md
-```
-
----
-
-### `DECISIONS.md`
-
-Use for important decisions and rationale.
-
-Include:
-
-* Architectural decisions
-* Product policy decisions
-* Important trade-offs
-* Rejected alternatives
-* Consequences of decisions
-
-Recommended format:
-
-```md
-## YYYY-MM-DD — Decision title
-
-Status: Active | Deprecated | Replaced
-
-Decision:
-- ...
-
-Reason:
-- ...
-
-Consequences:
-- ...
-```
-
-Do not include:
-
-* Trivial implementation choices
-* Temporary debugging decisions
-
----
-
-### `GLOSSARY.md`
-
-Use for project-specific terminology.
-
-Include:
-
-* Terms with special meaning in this project
-* Similar terms that may be confused
-* Domain vocabulary
-
-Recommended format:
-
-```md
-## Term
-
-Definition:
-- ...
-
-Notes:
-- ...
-```
-
-Do not include:
-
-* Generic programming terms
-* Obvious words
-
----
-
-### `TECH_DEBT.md`
-
-Use for unresolved technical debt that future work must account for.
-
-* Record verified limitations, fragile workarounds, or deferred fixes with concrete impact beyond the current task.
-* Keep each item short: problem and impact, relevant paths, reason deferred, and resolution direction or trigger.
-* Read when the task touches an affected area; do not load it for every task.
-* At the end of non-trivial work, add or update relevant items and remove resolved items after verification.
-* Exclude speculative improvements, ordinary task TODOs, progress logs, and resolved history.
-* Reference durable rules or decision rationale in other context files instead of duplicating them here. Preserve still-relevant knowledge there when removing a resolved item.
-* Mark unverified details as `Needs verification`.
-
-Recommended format:
-
-```md
-## Short debt title
-
-- Problem / impact: ...
-- Relevant paths: ...
-- Reason deferred: ...
-- Resolution / trigger: ...
-```
-
----
-
-### `domains/*.md`
-
-Use for domain-specific context.
-
-Include:
-
-* Business rules
-* Domain lifecycle rules
-* Permissions
-* Important flows
-* External dependencies
-* Edge cases
-* Gotchas
-
-Recommended format:
-
-```md
-# Domain Name
-
-## Purpose
-
-## Core Concepts
-
-## Business Rules
-
-## Permissions
-
-## Important Flows
-
-## Gotchas
-```
-
-Do not include:
-
-* Full source code
-* Full DB schema dumps
-* Task progress
-* Rules that belong in GLOBAL.md
-* Design rules that belong in DESIGN.md
-
----
-
-## Update Rules
-
-Update `.context/` only when durable knowledge changes.
-
-Update when work adds, changes, or reveals:
-
-* Business rule
-* Design rule
-* Domain invariant
-* Security or permission constraint
-* Project-wide convention
-* Meaningful decision
-* Project-specific term
-* Repeated failure case
-* Non-obvious gotcha
-* Unresolved technical debt affecting future work, or resolution of a recorded item
-
-Do not update for:
-
-* Small bug fixes
-* Simple refactors
-* Test-only changes
-* Temporary implementation details
-* One-off task progress
-* Obvious renames
-
----
-
-## Context Diet Rules
-
-Keep documents compact.
-
-1. Prefer bullets over long prose.
-2. Do not duplicate the same rule across files.
-3. Put information in the highest-level appropriate file.
-4. Reference another file by path instead of repeating content.
-5. Remove stale content when clearly obsolete.
-6. Mark uncertain information as `Needs verification`.
-7. Keep code snippets rare and tiny.
-8. Do not turn context into history.
-
-When unsure, ask:
-
-> Will this help a future AI avoid a likely mistake?
-
-If yes, document it.
-If no, leave it out.
-
----
-
-## Adding New Domain Files
-
-Create a new file under `domains/` when a domain has durable rules likely to matter again.
-
-Use lowercase kebab-case names.
-
-Illustrative filenames (create only those relevant to the project):
-
-```text
-domains/billing.md
-domains/notification.md
-domains/workspace.md
-```
-
-After adding, renaming, or removing a domain file, update this README's structure and any affected routing references to match existing files.
-
----
-
-## Optional Architecture Map
-
-Do not add `architecture.mmd` by default.
-
-Add it later only if the project structure becomes hard to explain with text alone.
-
-Useful signals:
-
-* Multiple major domains interact
-* External integrations become important
-* Auth, permission, payment, or order flows become complex
-* AI agents repeatedly misunderstand module relationships
-
-If added, keep it high-level.
-Do not turn it into a full file map.
+## Reading Map
+
+* Start with [GLOBAL.md](GLOBAL.md) when orienting to the project; then read only files relevant to the task.
+* Paths in code below are repository-relative; linked paths are relative to this file.
+
+| Need | Read |
+| --- | --- |
+| Direction, current state, shared rules | [GLOBAL.md](GLOBAL.md) |
+| Shared design rules | [DESIGN.md](DESIGN.md) |
+| Domain rules | `.context/domains/<domain>.md`; exact registered paths below |
+| Decision rationale or replacement | [DECISIONS.md](DECISIONS.md); follow its Owner links |
+| Project terminology | [GLOSSARY.md](GLOSSARY.md); relevant terms only |
+| Limitation affecting this task | [TECH_DEBT.md](TECH_DEBT.md); relevant items only |
+| Supporting evidence or assets | Reference Map below, or [GLOBAL References](GLOBAL.md#references) |
+| Task scope, completion criteria, results | `docs/tasks/YYYY-MM-DD-<slug>.md`, when required |
+
+Domain paths: none registered yet.
+
+## Reference Map
+
+`docs/` is optional; no subfolders exist yet.
+Register every created `docs/` subfolder with its exact path and one-line purpose here or in GLOBAL References; keep the map in one location.
+
+## Conditional Reading
+
+| Action | Read |
+| --- | --- |
+| Resolve rule ownership or conflicting rules | [WRITING.md: Knowledge and Ownership](WRITING.md#knowledge) |
+| Update context, a reference map, or a task record | Relevant section of [WRITING.md](WRITING.md) |
+| Write or update entries | No entries, including a new file: read its matching template below; existing entries: follow an existing entry's format |
+| Plan or review with `/spec-partner` | Optional Claude Code [spec-partner](../.claude/skills/spec-partner/SKILL.md) |
+
+If existing entries do not establish the needed format or allowed status values, read the matching template.
+
+## Templates
+
+Templates are the format source, not current project rules.
+
+| File | Template |
+| --- | --- |
+| Global context | [_templates/global.md](_templates/global.md) |
+| Domain context | [_templates/domain.md](_templates/domain.md) |
+| Decision log | [_templates/decisions.md](_templates/decisions.md) |
+| Glossary | [_templates/glossary.md](_templates/glossary.md) |
+| Task record | [_templates/task.md](_templates/task.md) |
+| Technical debt log | [_templates/tech-debt.md](_templates/tech-debt.md) |
+| Design context | [_templates/design.md](_templates/design.md) |
+| External reference | [_templates/reference.md](_templates/reference.md) |
