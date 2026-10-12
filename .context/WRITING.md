@@ -61,10 +61,11 @@ Replace template placeholders and examples with agreed or verified content. Keep
 
 ## Tasks
 
-* Create `docs/tasks/YYYY-MM-DD-<slug>.md` for work handed to another session or agent, or work needing separate completion criteria. Complete small same-session changes without a task record.
+* Create `docs/tasks/YYYY-MM-DD-<slug>.md` for work handed to another session or agent, or work needing separate completion criteria. Omit a record for small same-session work only when neither criterion applies.
 * Use the creation date in the path and update that same record through completion.
 * Agree scope, completion criteria, and context links before implementation; keep unresolved questions visible. Add results, verification evidence, reasoning, and user-confirmation needs as work progresses.
-* Mark work ready only when scope and completion criteria are agreed and blockers are resolved or excluded. Use the template's statuses to distinguish proposals, active work, and cancellation.
+* Record scope expansions or reductions as proposals; adopt them only after user agreement.
+* Mark work ready only when scope and completion criteria are agreed and blockers are resolved or excluded with user agreement. Use the template's statuses to distinguish proposals, active work, and cancellation.
 * Cover each agreed scope outcome with at least one criterion with a unique stable ID, repeatable check, explicit pass condition, and evidence.
 * Use observable outputs, measurable thresholds, or reproducible inspection steps so an agent can judge the outcome. Replace subjective phrases with those checks.
 * Leave untested criteria pending. If evidence is unavailable or external/user judgment is required, record the dependency and treat the criterion as blocked.
@@ -81,7 +82,7 @@ Replace template placeholders and examples with agreed or verified content. Keep
 ## Maintenance
 
 * Update durable rules, constraints, decisions, terms, or verified debt when their knowledge changes. Judge information rather than task size: a small fix can reveal a lasting constraint.
-* Record confirmed changes within existing authorization. Keep unresolved policy proposals separate and mark uncertain facts for verification.
+* Apply [AGENTS.md's role and authorization rules](../AGENTS.md#verify-before-changing-knowledge) when recording confirmed knowledge changes. Keep unresolved policy proposals separate and mark uncertain facts for verification.
 * Prefer concise bullets and one example when needed. Keep headings stable and link supporting material rather than repeating it.
 * Split topics when owners or typical reading tasks differ. Around 200 lines is a review signal, not a cap that justifies omitting knowledge.
 * Use a short domain entry file to link independently read subtopics; register those exact paths so they remain discoverable.

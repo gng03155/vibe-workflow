@@ -30,7 +30,7 @@ Register every created `docs/` subfolder with its exact path and one-line purpos
 | Resolve rule ownership or conflicting rules | [WRITING.md: Knowledge and Ownership](WRITING.md#knowledge) |
 | Update context, a reference map, or a task record | Relevant section of [WRITING.md](WRITING.md) |
 | Write or update entries | No entries, including a new file: read its matching template below; existing entries: follow an existing entry's format |
-| Plan or review with `/spec-partner` | Optional Claude Code [spec-partner](../.claude/skills/spec-partner/SKILL.md) |
+| Plan or review a handoff with `/spec-partner` | Optional Claude Code [spec-partner](../.claude/skills/spec-partner/SKILL.md) |
 
 If existing entries do not establish the needed format or allowed status values, read the matching template.
 

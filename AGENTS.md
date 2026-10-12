@@ -19,7 +19,8 @@ AI handoff guide for this project.
 ## Verify Before Changing Knowledge
 
 * Verify important implementation claims against code, configuration, and relevant local references or official documentation.
-* Preserve existing authorization. Resolve an undecided or conflicting policy before replacing it; use `.context/WRITING.md` for recording uncertain facts.
+* Interpret requests and approvals within the active role's write scope; follow an invoked skill's confirmation, handoff, and role-transition gates.
+* Preserve existing authorization within that scope. Resolve an undecided or conflicting policy before replacing it; use `.context/WRITING.md` for recording uncertain facts.
 
 ## Finish Non-Trivial Work
 
